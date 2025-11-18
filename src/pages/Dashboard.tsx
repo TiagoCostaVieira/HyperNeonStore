@@ -1,5 +1,6 @@
 import { Button3D } from "@/components/ui/button-3d";
 import { Package, TrendingUp, Clock, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // ← Adicione este import
 
 const mockStats = [
   { label: "Total Orders", value: "24", icon: Package, color: "primary" },
@@ -15,6 +16,8 @@ const mockOrders = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // ← Adicione esta linha no componente
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Delivered":
@@ -105,18 +108,20 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Account Settings */}
+        {/* Account Settings - ATUALIZADO */}
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="bg-muted/50 border border-accent/30 rounded-2xl p-8 space-y-4">
             <h3 className="text-2xl font-bold text-neon-cyan">Account Settings</h3>
             <p className="text-muted-foreground">Manage your personal information and preferences</p>
-            <Button3D variant="outline">Edit Profile</Button3D>
+            <Button3D variant="outline" onClick={() => navigate('/edit-profile')}>
+              Edit Profile
+            </Button3D>
           </div>
 
           <div className="bg-muted/50 border border-primary/30 rounded-2xl p-8 space-y-4">
             <h3 className="text-2xl font-bold text-neon-blue">Security</h3>
             <p className="text-muted-foreground">Update password and security settings</p>
-            <Button3D variant="outline">Security Settings</Button3D>
+            <Button3D variant="outline" onClick={() => navigate('/security-settings')}>Security Settings</Button3D>
           </div>
         </div>
       </div>

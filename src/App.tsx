@@ -10,7 +10,10 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Dashboard from "./pages/Dashboard";
+import EditProfile from "./pages/edit-profile";
 import NotFound from "./pages/NotFound";
+import SecuritySettings from "./pages/security-settings";
+
 
 const queryClient = new QueryClient();
 
@@ -28,6 +31,8 @@ const App = () => (
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
+            <Route path="/security-settings" element={<SecuritySettings />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
