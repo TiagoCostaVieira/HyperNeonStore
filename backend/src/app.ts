@@ -3,7 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import { timeStamp } from 'console';
-
+import {connectDb} from './config/database'
 
 dotenv.config();
 
@@ -39,8 +39,18 @@ app.get('/api', (req, res) =>{
     });
 });
 
-app.listen(PORT, () =>{
-    console.log(`🎮 Cyberpunk Backend running on port ${PORT}`);
-    console.log(`📊 Environment: ${process.env.NODE_ENV}`);
-    console.log(`🌐 URL: http://localhost:${PORT}`);
-})
+const startServer = async () => {
+    try
+    {
+        await connectDb();
+        app.listen(PORT, () =>{
+        console.log(`🎮 Cyberpunk Backend running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error('❌ Failed to start server:', error);
+        process.exit(1);
+    }
+    
+}
+
+startServer();
