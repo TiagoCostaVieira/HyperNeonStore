@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -47,16 +48,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+      },
+      fontFamily: {
+        'space': ['Space Grotesk', 'sans-serif'],
+      },
+      boxShadow: {
+        'neon-blue': '0 0 20px hsl(var(--glow-primary)), 0 0 40px hsl(var(--glow-primary))',
+        'neon-purple': '0 0 20px hsl(var(--glow-secondary)), 0 0 40px hsl(var(--glow-secondary))',
+        'neon-cyan': '0 0 20px hsl(var(--glow-accent)), 0 0 40px hsl(var(--glow-accent))',
+        '3d': '0 10px 30px -5px hsl(240 10% 5% / 0.5)',
       },
       borderRadius: {
         lg: "var(--radius)",
