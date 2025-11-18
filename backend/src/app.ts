@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import express from 'express'
 
 import { Router, Request, Response } from 'express';
@@ -17,6 +18,8 @@ app.use(router)
 
 app.listen(3333, () => 'server is runnig');
 =======
+=======
+>>>>>>> eb097b449d1bef1a0433697f6db924f219e8d4ff
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -73,4 +76,7 @@ const startServer = async () => {
 }
 
 startServer();
+<<<<<<< HEAD
 >>>>>>> simulacao
+=======
+>>>>>>> eb097b449d1bef1a0433697f6db924f219e8d4ff
